@@ -1,0 +1,47 @@
+export class LoanProfile {
+    LoanType: string;
+    //LoanAwardID: number;
+    LoanDate: Date;
+    LoanRepaymentBeginDate: Date;
+    LoanPeriodBeginDate: Date;
+    LoanPeriodEndDate: Date;
+    LoanAmount: number;
+    LoanDisbursedAmount: number;
+    LoanCanceledAmount: number;
+    LoanCanceledDate: Date;
+    LoanOutstandingPrincipalBalance: number;
+    LoanOutstandingPrincipalBalanceAsOfDate: Date;
+    LoanOutstandingInterestBalance: number;
+    LoanOutstandingInterestBalanceAsOfDate: Date;
+    LoanInterestRateType: string;
+    LoanInterestRate: number;
+    //LoanRepaymentPlanType: string;
+    //LoanRepaymentPlanBeginDate: Date;
+    //LoanRepaymentPlanScheduledAmount: number;
+    //LoanRepaymentPlanIDRPlanAnniversaryDate: Date;
+    //LoanConfirmedSubsidyStatus: string;
+    LoanSubsidizedUsageinYears: number;
+    //LoanReaffirmationDate: Date;
+    LoanMostRecentPaymentEffectiveDate: Date;
+    LoanNextPaymentDueDate: Date;
+    LoanCumulativePaymentAmount: number;
+    //LoanPSLFCumulativeMatchedMonths: number;
+    //LoanStatus: string;
+    //LoanStatusDescription: string;
+    //LoanStatusEffectiveDate: Date;
+    LoanDisbursementDate: Date;
+    LoanDisbursementAmount: number;
+    LoanDisbursements:[];
+    
+    ContactType: string;
+    ContactName: string;
+    ContactStreetAddress1: string;
+    ContactStreetAddress2: string;
+    ContactCity: string;
+    ContactStateCode: string;
+    ContactZipCode: number;
+    ContactPhoneNumber: string;
+    ContactPhoneExtension: string;
+    ContactEmailAddress: string;
+    ContactWebSiteAddress: string;
+}
