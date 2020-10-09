@@ -19,7 +19,7 @@ export class DoughnutChartComponent implements OnInit {
     var myDoughnutChart = new Chart('myChart', {
       type: 'doughnut',
       data: this.data,
-      options: Chart.defaults.doughnut
+      options: this.options
   });
   }
 
