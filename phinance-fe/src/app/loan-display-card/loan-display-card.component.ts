@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 @Component({
   selector: "app-loan-display-card",
   templateUrl: "./loan-display-card.component.html",
-  styleUrls: ["./loan-display-card.component.sass"],
+  styleUrls: ["./loan-display-card.component.scss"],
 })
 export class LoanDisplayCardComponent implements OnInit {
   data = {

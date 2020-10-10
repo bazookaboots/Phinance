@@ -1,8 +1,13 @@
-<div>
-    <mat-card class="loan-display-card">
-        <div style="float:left; width: 400px;">
-            <app-doughnut-chart [data]="data" [options]="options">
-            </app-doughnut-chart>
-        </div>
-    </mat-card>
-</div>
+
+<mat-card class="loan-display-card">
+    
+    <div style="float:left; width: 400px;">
+        <app-doughnut-chart [data]="data" [options]="options"></app-doughnut-chart>
+    </div>
+    <div class="loan-display-card-info">
+        <h2 class="loan-name"></h2>
+        <p class="loan-type"></p>
+        <div class="loan-principal"></div>
+        <div class="loan-interest"></div>
+    </div>
+</mat-card>

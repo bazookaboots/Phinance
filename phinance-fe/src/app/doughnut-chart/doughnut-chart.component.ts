@@ -5,7 +5,7 @@ import * as Chart from 'chart.js';
 @Component({
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
-  styleUrls: ['./doughnut-chart.component.sass']
+  styleUrls: ['./doughnut-chart.component.scss']
 })
 
 export class DoughnutChartComponent implements OnInit {
