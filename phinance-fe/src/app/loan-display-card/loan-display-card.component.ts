@@ -10,7 +10,6 @@ export class LoanDisplayCardComponent implements OnInit {
     labels: [],
     datasets: [
       {
-        label: "Population (millions)",
         backgroundColor: [
           "#3e95cd",
           "#8e5ea2",
@@ -25,8 +24,7 @@ export class LoanDisplayCardComponent implements OnInit {
   options = {
     cutoutPercentage:70,
     title: {
-      display: true,
-      text: "Predicted world population (millions) in 2050",
+      display: false
     },
   };
   constructor() {}

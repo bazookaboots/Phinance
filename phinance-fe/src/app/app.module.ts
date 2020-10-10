@@ -7,12 +7,18 @@ import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.componen
 import { LoanDisplayCardComponent } from './loan-display-card/loan-display-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
+import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
+import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
+import { LoansMainViewComponent } from './loans-main-view/loans-main-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoughnutChartComponent,
     LoanDisplayCardComponent,
+    TopNavBarComponent,
+    SideNavBarComponent,
+    LoansMainViewComponent,
   ],
   imports: [
     BrowserModule,
