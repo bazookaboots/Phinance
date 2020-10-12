@@ -1,4 +1,20 @@
-<app-top-nav-bar ></app-top-nav-bar>
-<!-- <app-side-nav-bar></app-side-nav-bar> -->
-<app-loans-main-view></app-loans-main-view>
-<router-outlet></router-outlet>
+<nb-layout>
+
+  <nb-layout-header fixed>
+  <!-- Insert header here -->
+  <app-top-nav-bar ></app-top-nav-bar>
+  </nb-layout-header>
+
+  <nb-layout-column>
+
+
+    <!-- <app-side-nav-bar></app-side-nav-bar> -->
+    <app-loans-main-view></app-loans-main-view>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+  <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

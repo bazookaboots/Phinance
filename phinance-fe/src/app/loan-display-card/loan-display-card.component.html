@@ -1,7 +1,7 @@
-<div class="w3-card-4">
+
     <div class="w3-cell-row">
         <div class="w3-third w3-container w3-cell" style="text-align: center;">
-            <app-doughnut-chart [data]="data" [options]="options">
+            <app-doughnut-chart [data]="data" [options]="options" [chartId]="loanId" #myname>
             </app-doughnut-chart>
         </div>
         <div class="w3-twothird w3-container w3-cell">
@@ -15,10 +15,8 @@
                 <h2 class = "text-header">Interest:</h2>
                 <h2 style="color: grey;">$300</h2>
             </div>
+            <button (click)="renderChart()">render chart</button>
         </div>
     </div>
 
-    <footer class="w3-container w3-blue">
-        <h5>Footer</h5>
-    </footer>
-</div>
+

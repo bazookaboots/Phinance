@@ -12,11 +12,18 @@ export class DoughnutChartComponent implements OnInit {
 
   @Input() data: Chart.ChartData;
   @Input() options: Chart.ChartOptions;
+  @Input() chartId: string;
   constructor() { }
 
 
   ngOnInit(): void {
-    var myDoughnutChart = new Chart('myChart', {
+    console.log(this.chartId)
+  }
+
+  renderChart():void {
+    console.log("render chart called in chart")
+    console.log(this.chartId)
+    var myDoughnutChart = new Chart(this.chartId, {
       type: 'doughnut',
       data: this.data,
       options: this.options

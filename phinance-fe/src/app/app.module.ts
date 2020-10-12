@@ -10,6 +10,8 @@ import { MatCardModule} from '@angular/material/card';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
 import { LoansMainViewComponent } from './loans-main-view/loans-main-view.component';
+import { NbThemeModule, NbLayoutModule, NbActionsModule, NbAccordionModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,12 @@ import { LoansMainViewComponent } from './loans-main-view/loans-main-view.compon
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    NbActionsModule,
+    NbAccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
