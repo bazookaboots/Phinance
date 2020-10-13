@@ -1,21 +1,20 @@
 
     <div class="w3-cell-row">
         <div class="w3-third w3-container w3-cell" style="text-align: center;">
-            <app-doughnut-chart [data]="data" [options]="options" [chartId]="loanId" #myname>
+            <app-doughnut-chart [data]="loanData.data" [options]="loanData.options" [chartId]="loanId" #myname>
             </app-doughnut-chart>
         </div>
         <div class="w3-twothird w3-container w3-cell">
-            <h1 class="loan-name" style="margin-bottom: 0;">Loan Name</h1>
-            <h1 style="color: grey;">LOAN TYPE</h1>
+            <h1 class="loan-name" style="margin-bottom: 0;">{{loanData.name}}</h1>
+            <h1 style="color: grey;">{{loanData.type}}</h1>
             <div>
                 <h2 class = "text-header">Principal:</h2>
-                <h2 style="color: grey;">$16,000</h2>
+                <h2 style="color: grey;">${{loanData.principal}}</h2>
             </div>
             <div>
                 <h2 class = "text-header">Interest:</h2>
-                <h2 style="color: grey;">$300</h2>
+                <h2 style="color: grey;">${{loanData.interest}}</h2>
             </div>
-            <button (click)="renderChart()">render chart</button>
         </div>
     </div>
 

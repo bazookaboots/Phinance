@@ -1,5 +1,6 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import * as Chart from 'chart.js';
+import { LoanDisplayCardComponent } from '../loan-display-card/loan-display-card.component';
 import { testLoans }from '../test-loans'
 
 @Component({
@@ -9,28 +10,8 @@ import { testLoans }from '../test-loans'
 })
 export class LoansMainViewComponent implements OnInit, DoCheck {
 
+  @ViewChildren(LoanDisplayCardComponent) loanDisplayCards: QueryList<LoanDisplayCardComponent>;
 
-  data = {
-    labels: [],
-    datasets: [
-      {
-        backgroundColor: [
-          "#3e95cd",
-          "#8e5ea2",
-          "#3cba9f",
-          "#e8c3b9",
-          "#c45850",
-        ],
-        data: [2478, 5267, 734, 784, 433],
-      },
-    ],
-  };
-  options = {
-    cutoutPercentage:70,
-    title: {
-      display: false
-    },
-  };
   
   loans = testLoans;
   constructor() { }
@@ -38,14 +19,14 @@ export class LoansMainViewComponent implements OnInit, DoCheck {
   ngOnInit(): void {
   }
 
-  LogClick(id) {
-    var myDoughnutChart = new Chart(id, {
-      type: 'doughnut',
-      data: this.data,
-      options: this.options
-  });
+  renderChart(i):void{
+    console.log("renderChart Called")
+    this.loanDisplayCards.forEach((item: LoanDisplayCardComponent) => {
+      if (item.loanId == 'hello'+i){
+        console.log(item.loanId)
+        item.renderChart();
+      }});
   }
-
   ngDoCheck(): void {
     //Called every time that the input properties of a component or a directive are checked. Use it to extend change detection by performing a custom check.
     //Add 'implements DoCheck' to the class.
