@@ -20,9 +20,9 @@ export class LoansMainViewComponent implements OnInit, DoCheck {
   }
 
   renderChart(i):void{
-    console.log("renderChart Called")
+    //console.log("LoansMainViewComponent method renderChart Called with parameter(s):\n\ti:" + i)
     this.loanDisplayCards.forEach((item: LoanDisplayCardComponent) => {
-      if (item.loanId == 'hello'+i){
+      if (item.loanId == 'loanChartID'+i){
         console.log(item.loanId)
         item.renderChart();
       }});

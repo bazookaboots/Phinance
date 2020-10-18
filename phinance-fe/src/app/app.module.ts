@@ -18,6 +18,8 @@ import {
   NbCardModule 
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { LoansTimelineComponent } from './loans-timeline/loans-timeline.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     TopNavBarComponent,
     SideNavBarComponent,
     LoansMainViewComponent,
+    LineChartComponent,
+    LoansTimelineComponent,
   ],
   imports: [
     BrowserModule,

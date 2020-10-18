@@ -1,14 +1,19 @@
 <div class="container">
     <div class="w3-row">
         <div class="w3-twothird w3-container">
+            <nb-card>
+                <nb-card-body>
+                    <app-loans-timeline></app-loans-timeline>
+                </nb-card-body>
+            </nb-card>
             <nb-accordion>
-                <nb-accordion-item *ngFor="let loan of loans; let i = index" (collapsedChange)="renderChart(i)">
+                <nb-accordion-item *ngFor="let loan of loans; let i = index" (collapsedChange)="renderChart(loan.entityID)">
                     <nb-accordion-item-header>
-                        {{loan.name}}
+                        {{loan.type}}
                     </nb-accordion-item-header>
                     <nb-accordion-item-body>
                         <app-loan-display-card 
-                            [loanId] = "'hello' + i"
+                            [loanId] = "'loanChartID' + loan.entityID"
                             [loanData] = "loan">
                         </app-loan-display-card>
                     </nb-accordion-item-body>
