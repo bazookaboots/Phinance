@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 
 @Component({
@@ -8,8 +8,12 @@ import * as Chart from 'chart.js';
 })
 export class LineChartComponent implements OnInit {
 
+  @Input() data: Chart.ChartData;
+  @Input() options: Chart.ChartOptions;
+  @Input() chartId: string;
+  @Input() chartType: string;
   constructor() { }
-  data = {
+  datatest = {
     labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     datasets: [
         {
@@ -34,10 +38,17 @@ export class LineChartComponent implements OnInit {
         }
     ]
 };
-options = {
+optionstest = {
 }
 
   ngOnInit(): void {
+    var myLineChart = new Chart("myLineChart", {
+      type: 'line',
+      data: this.data,
+      options: this.options,
+  });
+  }
+  renderChart(): void {
     var myLineChart = new Chart("myLineChart", {
       type: 'line',
       data: this.data,

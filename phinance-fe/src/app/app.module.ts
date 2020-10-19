@@ -20,6 +20,7 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { LoansTimelineComponent } from './loans-timeline/loans-timeline.component';
+import { ChartJsComponent } from './chart-js/chart-js.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoansTimelineComponent } from './loans-timeline/loans-timeline.componen
     LoansMainViewComponent,
     LineChartComponent,
     LoansTimelineComponent,
+    ChartJsComponent,
   ],
   imports: [
     BrowserModule,

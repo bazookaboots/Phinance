@@ -16,6 +16,7 @@ export class LoanProfile {
     LoanOutstandingInterestBalanceAsOfDate: Date;
     LoanInterestRateType: string;
     LoanInterestRate: number;
+    LoanInterestAccrualFequency: number;
     //LoanRepaymentPlanType: string;
     //LoanRepaymentPlanBeginDate: Date;
     //LoanRepaymentPlanScheduledAmount: number;
@@ -62,6 +63,7 @@ export class LoanProfile {
         LoanOutstandingInterestBalanceAsOfDate?: Date,
         LoanInterestRateType?: string,
         LoanInterestRate?: number,
+        LoanInterestAccrualFequency?: number,
         //LoanRepaymentPlanType?: string,
         //LoanRepaymentPlanBeginDate?: Date,
         //LoanRepaymentPlanScheduledAmount?: number,
@@ -108,6 +110,7 @@ export class LoanProfile {
         this.LoanOutstandingInterestBalanceAsOfDate = LoanInfo.LoanOutstandingInterestBalanceAsOfDate;
         this.LoanInterestRateType = LoanInfo.LoanInterestRateType;
         this.LoanInterestRate = LoanInfo.LoanInterestRate;
+        this.LoanInterestAccrualFequency= LoanInfo.LoanInterestAccrualFequency;
         //this.LoanRepaymentPlanType= LoanInfo.LoanRepaymentPlanType;
         //this.LoanRepaymentPlanBeginDate= LoanInfo.LoanRepaymentPlanBeginDate;
         //this.LoanRepaymentPlanScheduledAmount= LoanInfo.LoanRepaymentPlanScheduledAmount;

@@ -3,7 +3,10 @@
         <div class="w3-twothird w3-container">
             <nb-card>
                 <nb-card-body>
-                    <app-loans-timeline></app-loans-timeline>
+                    <app-loans-timeline
+                        [loanId] = "'loanChartID'"
+                        [loansData] = "loans">
+                    </app-loans-timeline>
                 </nb-card-body>
             </nb-card>
             <nb-accordion>

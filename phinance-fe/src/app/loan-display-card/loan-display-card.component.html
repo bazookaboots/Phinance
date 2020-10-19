@@ -1,21 +1,22 @@
-
-    <div class="w3-cell-row">
-        <div class="w3-third w3-container w3-cell" style="text-align: center;">
-            <app-doughnut-chart [data]="loanDataParsed.data" [options]="loanDataParsed.options" [chartId]="loanId" #myname>
-            </app-doughnut-chart>
+<div class="w3-cell-row">
+    <div class="w3-third w3-container w3-cell" style="text-align: center;">
+        <app-chart-js 
+            [data]="loanDataParsed.data" 
+            [options]="loanDataParsed.options" 
+            [chartId]="loanId"
+            [chartType]="'doughnut'" #doughnutChart>
+        </app-chart-js>
+    </div>
+    <div class="w3-twothird w3-container w3-cell">
+        <h1 class="loan-name" style="margin-bottom: 0;">{{loanData.name}}</h1>
+        <h1 style="color: grey;">{{loanData.type}}</h1>
+        <div>
+            <h2 class="text-header">Principal:</h2>
+            <h2 style="color: grey;">${{loanData.principleAmount}}</h2>
         </div>
-        <div class="w3-twothird w3-container w3-cell">
-            <h1 class="loan-name" style="margin-bottom: 0;">{{loanData.name}}</h1>
-            <h1 style="color: grey;">{{loanData.type}}</h1>
-            <div>
-                <h2 class = "text-header">Principal:</h2>
-                <h2 style="color: grey;">${{loanData.principleAmount}}</h2>
-            </div>
-            <div>
-                <h2 class = "text-header">Interest:</h2>
-                <h2 style="color: grey;">${{loanData.interestAmount}}</h2>
-            </div>
+        <div>
+            <h2 class="text-header">Interest:</h2>
+            <h2 style="color: grey;">${{loanData.interestAmount}}</h2>
         </div>
     </div>
-
-
+</div>

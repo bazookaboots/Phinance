@@ -1,8 +1,11 @@
 import { LoanProfile } from './loan-profile';
-
-enum ChartType {
-    PIE = 0,
-    LINE = 1
+enum DatePeriodization {
+    YEARLY=0,
+    BIYEARLY=1,
+    QUARTERLY=2,
+    MONTHLY=3,
+    WEEKLY=4,
+    DAILY=5
 }
 export class Loan {
     
@@ -19,16 +22,16 @@ export class Loan {
         }
     }
 
-    
-    generateChartData(chartType: ChartType){
-        switch(chartType){
-            case 0:{
-
-            }
-            case 1:{
-
-            }
+    calculateFuture(periods:number, frequency:DatePeriodization){
+        switch(frequency){
+        case DatePeriodization.YEARLY: {}
+        case DatePeriodization.BIYEARLY:{}
+        case DatePeriodization.QUARTERLY:{}
+        case DatePeriodization.MONTHLY:{}
+        case DatePeriodization.WEEKLY:{}
+        case DatePeriodization.DAILY:{}
         }
+        
     }
 
     get entityID(): number {
@@ -48,6 +51,12 @@ export class Loan {
     }
     get principleAmount():number | null {
         return this._profile.LoanOutstandingPrincipalBalance;
+    }
+    get outstandingBalance(): number | null{
+        return this._profile.LoanOutstandingPrincipalBalance + this._profile.LoanOutstandingInterestBalance
+    }
+    get accrualFrequency(): number | null {
+        return this._profile.LoanInterestAccrualFequency;
     }
 
     set profile(profile: LoanProfile) {

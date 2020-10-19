@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from "@angular/core";
+import { ChartJsComponent } from '../chart-js/chart-js.component';
 import { Loan } from '../shared/models/loan';
 
 @Component({
@@ -9,7 +10,7 @@ import { Loan } from '../shared/models/loan';
 export class LoanDisplayCardComponent implements OnInit {
   @Input() loanId: string;
   @Input() loanData: Loan;
-  @ViewChild('myname') chart;
+  @ViewChild('doughnutChart') chart:ChartJsComponent;
   
   loanDataParsed;
   constructor() {}
@@ -23,7 +24,7 @@ export class LoanDisplayCardComponent implements OnInit {
       interest: this.loanData.interestAmount,
       currentRate: 0,
       data: {
-        labels: [],
+        labels: ["Principal Amount", "Interest Amount"],
         datasets: [
           {
             backgroundColor: [
@@ -39,6 +40,9 @@ export class LoanDisplayCardComponent implements OnInit {
         title: {
           display: false
         },
+        legend: {
+          display:false
+        }
       }
     }
   }

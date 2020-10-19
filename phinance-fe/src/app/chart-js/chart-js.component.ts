@@ -1,14 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 
-
 @Component({
-  selector: 'app-doughnut-chart',
-  templateUrl: './doughnut-chart.component.html',
-  styleUrls: ['./doughnut-chart.component.scss']
+  selector: 'app-chart-js',
+  templateUrl: './chart-js.component.html',
+  styleUrls: ['./chart-js.component.scss']
 })
-
-export class DoughnutChartComponent implements OnInit {
+export class ChartJsComponent implements OnInit {
 
   @Input() data: Chart.ChartData;
   @Input() options: Chart.ChartOptions;
@@ -22,12 +20,10 @@ export class DoughnutChartComponent implements OnInit {
 
   renderChart():void {
     //console.log("DoughnutChartComponent method renderChart Called)
-    var myDoughnutChart = new Chart(this.chartId, {
+    var myChart = new Chart(this.chartId, {
       type: this.chartType,
       data: this.data,
       options: this.options
   });
   }
-
 }
-
