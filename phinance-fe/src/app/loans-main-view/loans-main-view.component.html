@@ -23,10 +23,17 @@
                 </nb-accordion-item>
             </nb-accordion>
         </div>
-        <div class="w3-third w3-container">
+        <div class="w3-third w3-container" style="display:block;">
             <nb-card>
                 <nb-card-body>
-                  Card
+                    {{loanColl.getTotalBalance()}}
+                    <app-chart-js 
+                        [data]="data" 
+                        [options]="options" 
+                        [chartId]="1234"
+                        [chartType]="'doughnut'" 
+                        #totalDougnutChart>
+                    </app-chart-js>
                 </nb-card-body>
             </nb-card>
         </div>

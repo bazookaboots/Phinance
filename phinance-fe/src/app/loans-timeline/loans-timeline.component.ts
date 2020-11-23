@@ -71,7 +71,7 @@ export class LoansTimelineComponent implements OnInit {
       {y:4, x:2020}, 
       {y:5, x:2021}, 
       {y:6, x:2022}, 
-      {y:7, x:2022.5}]
+      {y:7, x:2023}]
 
   }
 }

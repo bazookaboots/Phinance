@@ -18,12 +18,12 @@ export class ChartJsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  renderChart():void {
+  renderChart(): void {
     //console.log("DoughnutChartComponent method renderChart Called)
     var myChart = new Chart(this.chartId, {
       type: this.chartType,
       data: this.data,
       options: this.options
-  });
+    });
   }
 }

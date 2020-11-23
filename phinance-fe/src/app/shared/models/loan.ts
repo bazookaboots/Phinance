@@ -1,5 +1,5 @@
 import { LoanProfile } from './loan-profile';
-enum DatePeriodization {
+export enum DatePeriodization {
     YEARLY=0,
     BIYEARLY=1,
     QUARTERLY=2,

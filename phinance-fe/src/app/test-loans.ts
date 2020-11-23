@@ -1,5 +1,6 @@
 import { Loan } from './shared/models/loan';
 import { LoanProfile } from './shared/models/loan-profile';
+import { LoanCollection} from './shared/models/collection-loans';
 
 export const testLoans = [
   new Loan(1, new LoanProfile({
@@ -34,8 +35,10 @@ export const testLoans = [
     LoanName:"Direct Stafford Loan",
     LoanType:"Direct Unsubsidized",
     LoanOutstandingPrincipalBalance:2000,
-    LoanOutstandingInterestBalance:196,
+    LoanOutstandingInterestBalance:197,
     LoanInterestRate:0,
   })),  
   
 ];
+
+export const loanCollection = new LoanCollection(testLoans)
