@@ -1,3 +1,4 @@
+import { CashFlowHistory } from './cashflow-history';
 import { LoanProfile } from './loan-profile';
 export enum DatePeriodization {
     YEARLY=0,
@@ -11,9 +12,13 @@ export class Loan {
     
     private _entityID: number = 0;
     private _profile: LoanProfile = null;
+    private _paymentHistory: CashFlowHistory;
+    private _interestAccrualHistory: CashFlowHistory;
 
-    constructor(entityID: number, profile?: LoanProfile){
+    constructor(entityID: number, profile?: LoanProfile, paymentHistory?: [number, Date][], interestHistory?: [number, Date][]){
         this._entityID = entityID
+        this._paymentHistory = new CashFlowHistory(paymentHistory)
+        this._interestAccrualHistory = new CashFlowHistory(paymentHistory)
         if(profile === undefined || profile === null){
             this._profile = null
         }
@@ -49,7 +54,7 @@ export class Loan {
     get interestAmount():number | null {
         return this._profile.LoanOutstandingInterestBalance;
     }
-    get principleAmount():number | null {
+    get principalAmount():number | null {
         return this._profile.LoanOutstandingPrincipalBalance;
     }
     get outstandingBalance(): number | null{
@@ -58,7 +63,24 @@ export class Loan {
     get accrualFrequency(): number | null {
         return this._profile.LoanInterestAccrualFequency;
     }
-
+    get paymentHistory(){
+        var payments: [number,Date][];
+        this._paymentHistory.cashflows.forEach( flow =>{
+            payments.push([flow.value,flow.date])
+        })
+        return payments
+    }    
+    get interestAccrualHistory(){
+        var charges: [number,Date][];
+        this._interestAccrualHistory.cashflows.forEach( flow =>{
+            charges.push([flow.value,flow.date])
+        })
+        return charges
+    }
+    get cashFlowHistory(){
+        var flows: [number, Date][]
+        return flows;
+    }
     set profile(profile: LoanProfile) {
         this._profile = profile;
     }

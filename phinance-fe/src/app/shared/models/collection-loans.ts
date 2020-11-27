@@ -17,13 +17,30 @@ export class LoanCollection {
         this._loans.push(loan);
     }
 
-    getTotalBalance(): number {
+    get TotalOutstandingBalance(): number {
         let principal: number = 0;
         this._loans.forEach(loan => {
             principal += loan.outstandingBalance;
         });
         return principal
     }
+
+    get TotalOutstandingPrincipal(): number {
+        let principal: number = 0;
+        this._loans.forEach(loan => {
+            principal += loan.principalAmount;
+        });
+        return principal
+    }
+    get TotalOutstandingInterest(): number {
+        let principal: number = 0;
+        this._loans.forEach(loan => {
+            principal += loan.interestAmount;
+        });
+        return principal
+    }
+
+    detTotalInterest
 
     get loans():Loan[] | null {
         return this._loans;

@@ -20,7 +20,7 @@ export class LoanDisplayCardComponent implements OnInit {
       id: this.loanData.entityID,
       name: 'Direct Stafford Loan',
       type: this.loanData.type,
-      principal: this.loanData.principleAmount,
+      principal: this.loanData.principalAmount,
       interest: this.loanData.interestAmount,
       currentRate: 0,
       data: {
@@ -31,7 +31,7 @@ export class LoanDisplayCardComponent implements OnInit {
               "#3e95cd",
               "#8e5ea2",
             ],
-            data: [this.loanData.principleAmount, this.loanData.interestAmount],
+            data: [this.loanData.principalAmount, this.loanData.interestAmount],
           },
         ],
       },

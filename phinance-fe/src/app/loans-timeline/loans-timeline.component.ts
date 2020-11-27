@@ -20,7 +20,7 @@ export class LoansTimelineComponent implements OnInit {
       id: this.loansData[0].entityID,
       name: 'Direct Stafford Loan',
       type: this.loansData[0].type,
-      principal: this.loansData[0].principleAmount,
+      principal: this.loansData[0].principalAmount,
       interest: this.loansData[0].interestAmount,
       currentRate: 0,
       data: {

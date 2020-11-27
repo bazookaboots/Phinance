@@ -26,12 +26,12 @@
         <div class="w3-third w3-container" style="display:block;">
             <nb-card>
                 <nb-card-body>
-                    {{loanColl.getTotalBalance()}}
                     <app-chart-js 
                         [data]="data" 
                         [options]="options" 
-                        [chartId]="1234"
-                        [chartType]="'doughnut'" 
+                        [chartId]="'testchart'"
+                        [chartType]="'doughnut'"
+                        [selfRender]= "true"
                         #totalDougnutChart>
                     </app-chart-js>
                 </nb-card-body>
