@@ -12,13 +12,11 @@ export class Loan {
     
     private _entityID: number = 0;
     private _profile: LoanProfile = null;
-    private _paymentHistory: CashFlowHistory;
-    private _interestAccrualHistory: CashFlowHistory;
+    private _cashFlowHistory: CashFlowHistory;
 
-    constructor(entityID: number, profile?: LoanProfile, paymentHistory?: [number, Date][], interestHistory?: [number, Date][]){
+    constructor(entityID: number, profile?: LoanProfile, cashFlowHistory?: [number, Date, string][]){
         this._entityID = entityID
-        this._paymentHistory = new CashFlowHistory(paymentHistory)
-        this._interestAccrualHistory = new CashFlowHistory(paymentHistory)
+        this._cashFlowHistory = new CashFlowHistory(cashFlowHistory)
         if(profile === undefined || profile === null){
             this._profile = null
         }
@@ -65,21 +63,33 @@ export class Loan {
     }
     get paymentHistory(){
         var payments: [number,Date][];
-        this._paymentHistory.cashflows.forEach( flow =>{
-            payments.push([flow.value,flow.date])
+        this._cashFlowHistory.cashflows.forEach( flow =>{
+            if(flow.type === 'payment'){
+                payments.push([flow.value,flow.date])
+            }
         })
         return payments
     }    
     get interestAccrualHistory(){
         var charges: [number,Date][];
-        this._interestAccrualHistory.cashflows.forEach( flow =>{
-            charges.push([flow.value,flow.date])
+        this._cashFlowHistory.cashflows.forEach( flow =>{
+            if(flow.type === 'interest'){
+                charges.push([flow.value,flow.date])
+            }
         })
         return charges
     }
+    get uncategorisedHistory(){
+        var flows: [number,Date][];
+        this._cashFlowHistory.cashflows.forEach( flow =>{
+            if(flow.type !== 'interest' && flow.type !== 'payment'){
+                flows.push([flow.value,flow.date])
+            }
+        })
+        return flows
+    }
     get cashFlowHistory(){
-        var flows: [number, Date][]
-        return flows;
+        return this._cashFlowHistory;
     }
     set profile(profile: LoanProfile) {
         this._profile = profile;
