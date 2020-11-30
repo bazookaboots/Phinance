@@ -1,0 +1,49 @@
+.container1 {
+  width: 100%;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.left {
+  order: 1;
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: block;
+  margin-right: 15px;
+  box-sizing: border-box;
+}
+.right {
+  order: 2;
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: 15px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .left {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    order: 1;
+  }
+  .right {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+    order: 2;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+    .container1 {
+        width: 90%;
+      }
+}

@@ -1,7 +1,7 @@
-<div class="myChart-container" style="display: block;">
+<div class="chart-container">
     <div *ngIf="chartType =='doughnut'" class="chart-text" >
-        <p></p>
+        <p>{{middleText}}</p>
     </div>
-    <canvas id="{{chartId}}" width="100%" height="100%"#canvas>
+    <canvas id="{{chartId}}"#canvas>
     </canvas>
 </div>

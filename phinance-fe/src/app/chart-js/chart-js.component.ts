@@ -13,8 +13,9 @@ export class ChartJsComponent implements OnInit, AfterViewInit {
   @Input() chartId: string;
   @Input() chartType: string;
   @Input() selfRender: boolean = false;
-  constructor() { }
+  @Input() middleText?: string = '';
 
+  constructor() { }
 
   ngOnInit(): void {
 

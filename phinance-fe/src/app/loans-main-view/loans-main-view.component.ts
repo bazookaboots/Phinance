@@ -2,8 +2,15 @@ import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/
 import * as Chart from 'chart.js';
 import { ChartJsComponent } from '../chart-js/chart-js.component';
 import { LoanDisplayCardComponent } from '../loan-display-card/loan-display-card.component';
+import { LoanCollection } from '../shared/models/loan-collection';
 import { loanCollection } from '../test-loans';
 
+function thousands_separators(num): string
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
+  }
 @Component({
   selector: 'app-loans-main-view',
   templateUrl: './loans-main-view.component.html',
@@ -18,20 +25,19 @@ export class LoansMainViewComponent implements OnInit{
   options;
 
   loans = loanCollection.loans;
-  loanColl;
+  loanColl:LoanCollection;
   constructor() {
     this.loanColl = loanCollection;
   }
 
   ngOnInit(): void {
-    console.log("Main init called")
     this.data = {
       labels: ["Principal", "Interest"],
       datasets: [
         {
           label: "Total Outstanding Loan Balance",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [this.loanColl.TotalOutstandingPrincipal,this.loanColl.TotalOutstandingInterest]
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [this.loanColl.principalAmount,this.loanColl.interestAmount]
         }
       ]
     }
@@ -41,6 +47,13 @@ export class LoansMainViewComponent implements OnInit{
         display: false
       }
     }
+  }
+  
+  thousands_separators(num): string
+  {
+    var num_parts = num.toString().split(".");
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return num_parts.join(".");
   }
 
   renderChart(i):void{

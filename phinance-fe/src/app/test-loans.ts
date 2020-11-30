@@ -1,6 +1,6 @@
 import { Loan } from './shared/models/loan';
 import { LoanProfile } from './shared/models/loan-profile';
-import { LoanCollection} from './shared/models/collection-loans';
+import { LoanCollection} from './shared/models/loan-collection';
 
 export const testLoans = [
   new Loan(1, new LoanProfile({

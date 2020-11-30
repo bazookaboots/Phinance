@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 import { LoanDisplayCardComponent } from './loan-display-card/loan-display-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule} from '@angular/material/card';
@@ -18,21 +17,20 @@ import {
   NbCardModule 
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { LineChartComponent } from './line-chart/line-chart.component';
-import { LoansTimelineComponent } from './loans-timeline/loans-timeline.component';
 import { ChartJsComponent } from './chart-js/chart-js.component';
+import { LoanTimelineComponent } from './loan-timeline/loan-timeline.component';
+import { CreditMainViewComponent } from './credit-main-view/credit-main-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DoughnutChartComponent,
     LoanDisplayCardComponent,
     TopNavBarComponent,
     SideNavBarComponent,
     LoansMainViewComponent,
-    LineChartComponent,
-    LoansTimelineComponent,
     ChartJsComponent,
+    LoanTimelineComponent,
+    CreditMainViewComponent,
   ],
   imports: [
     BrowserModule,
