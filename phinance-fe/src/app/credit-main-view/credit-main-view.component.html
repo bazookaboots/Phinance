@@ -1,1 +1,177 @@
-<p>credit-main-view works!</p>
+<div style="width: 80%; margin: 0 auto">
+  <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+    <nb-card style="flex: 1">
+      <nb-card-body>
+        <div style="height: 300px;width: 300px;margin: 0 auto">
+          <app-chart-js
+            [data]="data"
+            [options]="options"
+            [chartId]="'testchart'"
+            [chartType]="'doughnut'"
+            [selfRender]="true"
+          ></app-chart-js>
+        </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="flex: 1">
+      <nb-card-header style="text-align: center">
+        <h1>Total Credit</h1>
+      </nb-card-header>
+      <nb-card-body>
+        <div style="display: flex; flex-direction: row">
+          <div style="width: 50%; text-align: center">
+            <h3>Credit Limit Used:</h3>
+            <h1 style="color: red">$21,921</h1>
+          </div>
+          <div style="width: 50%; text-align: center">
+            <h3>Credit Limit Left:</h3>
+            <h1 style="color: rgb(61, 231, 18)">$28,079</h1>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <nb-card>
+    <nb-card-header style="display: flex; flex-direction: row">
+        <span style="flex: 1"><button nbButton>Card Name</button></span>
+        <span style="flex: 1; text-align: left"><button nbButton>Card Number</button></span>
+        <span style="flex: 1; text-align: center"><button nbButton>Next Payment Due</button></span>
+        <span style="flex: 1; text-align: center"><button nbButton>Amount Due</button></span>
+      <div style="flex: 1; text-align: center">
+        <span>Utilization</span><br />
+        <div style="flex: 1; display: flex; width: 100%">
+            <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: right;
+              font-weight: 400;
+            "
+            ><button nbButton>Current Usage</button></span
+          >
+          <span style="display: block; width: 10%; text-align: center">|</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              font-weight: 400;
+            "
+            ><button nbButton>Available Credit</button></span>
+        </div>
+    </div>
+    </nb-card-header>
+    <nb-list nbInfiniteList [threshold]="500">
+      <nb-list-item>
+        <span style="flex: 1">BECU VISA</span>
+        <span style="flex: 1; text-align: left">**** 4854</span>
+        <span style="flex: 1; text-align: center">11/20/2020</span>
+        <span style="flex: 1; text-align: center">$838.75</span>
+        <div style="flex: 1; display: flex; width: 100%">
+          <span
+            style="display: block; width: 45%; text-align: right; color: red"
+            >$3,355</span
+          >
+          <span style="display: block; width: 10%; text-align: center">/</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              color: rgb(61, 231, 18);
+            "
+            >$6,645</span
+          >
+        </div>
+      </nb-list-item>
+      <nb-list-item>
+        <span style="flex: 1">USAA VISA</span>
+        <span style="flex: 1; text-align: left">**** 4324</span>
+        <span style="flex: 1; text-align: center">11/20/2020</span>
+        <span style="flex: 1; text-align: center">$91.5</span>
+        <div style="flex: 1; display: flex; width: 100%">
+          <span
+            style="display: block; width: 45%; text-align: right; color: red"
+            >$366</span
+          >
+          <span style="display: block; width: 10%; text-align: center">/</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              color: rgb(61, 231, 18);
+            "
+            >$9,634</span
+          >
+        </div>
+      </nb-list-item>
+      <nb-list-item>
+        <span style="flex: 1">American Express VISA</span>
+        <span style="flex: 1; text-align: left">**** 6728</span>
+        <span style="flex: 1; text-align: center">11/20/2020</span>
+        <span style="flex: 1; text-align: center">$2,098</span>
+        <div style="flex: 1; display: flex; width: 100%">
+          <span
+            style="display: block; width: 45%; text-align: right; color: red"
+            >$8,392</span
+          >
+          <span style="display: block; width: 10%; text-align: center">/</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              color: rgb(61, 231, 18);
+            "
+            >$1,608</span
+          >
+        </div>
+      </nb-list-item>
+      <nb-list-item>
+        <span style="flex: 1">Chase Bank VISA</span>
+        <span style="flex: 1; text-align: left">**** 0236</span>
+        <span style="flex: 1; text-align: center">11/20/2020</span>
+        <span style="flex: 1; text-align: center">$2,341.25</span>
+        <div style="flex: 1; display: flex; width: 100%">
+          <span
+            style="display: block; width: 45%; text-align: right; color: red"
+            >$9,365</span
+          >
+          <span style="display: block; width: 10%; text-align: center">/</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              color: rgb(61, 231, 18);
+            "
+            >$635</span
+          >
+        </div>
+      </nb-list-item>
+      <nb-list-item>
+        <span style="flex: 1">Wells Fargo VISA</span>
+        <span style="flex: 1; text-align: left">**** 3457</span>
+        <span style="flex: 1; text-align: center">11/20/2020</span>
+        <span style="flex: 1; text-align: center">$110.75</span>
+        <div style="flex: 1; display: flex; width: 100%">
+          <span
+            style="display: block; width: 45%; text-align: right; color: red"
+            >$443</span
+          >
+          <span style="display: block; width: 10%; text-align: center">/</span>
+          <span
+            style="
+              display: block;
+              width: 45%;
+              text-align: left;
+              color: rgb(61, 231, 18);
+            "
+            >$9,557</span
+          >
+        </div>
+      </nb-list-item>
+    </nb-list>
+  </nb-card>
+</div>

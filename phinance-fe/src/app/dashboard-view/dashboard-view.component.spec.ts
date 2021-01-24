@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideNavBarComponent } from './side-nav-bar.component';
+import { DashboardViewComponent } from './dashboard-view.component';
 
-describe('SideNavBarComponent', () => {
-  let component: SideNavBarComponent;
-  let fixture: ComponentFixture<SideNavBarComponent>;
+describe('DashboardViewComponent', () => {
+  let component: DashboardViewComponent;
+  let fixture: ComponentFixture<DashboardViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideNavBarComponent ]
+      declarations: [ DashboardViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SideNavBarComponent);
+    fixture = TestBed.createComponent(DashboardViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

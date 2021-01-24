@@ -1,20 +1,17 @@
 <nb-layout>
-
   <nb-layout-header fixed>
-  <!-- Insert header here -->
-  <app-top-nav-bar ></app-top-nav-bar>
+    <!-- Insert header here -->
   </nb-layout-header>
 
+  <nb-sidebar class="menu-sidebar" tag="main-nav" state="compacted" responsive start>
+    <button (click)="toggleCompact()"></button>
+  </nb-sidebar>
+
   <nb-layout-column>
-
-
-    <!-- <app-side-nav-bar></app-side-nav-bar> -->
-    <app-credit-main-view></app-credit-main-view>
     <router-outlet></router-outlet>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
-  <!-- Insert footer here -->
+    <!-- Insert footer here -->
   </nb-layout-footer>
-
 </nb-layout>

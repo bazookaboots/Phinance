@@ -5,12 +5,7 @@ import { LoanDisplayCardComponent } from '../loan-display-card/loan-display-card
 import { LoanCollection } from '../shared/models/loan-collection';
 import { loanCollection } from '../test-loans';
 
-function thousands_separators(num): string
-  {
-    var num_parts = num.toString().split(".");
-    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return num_parts.join(".");
-  }
+
 @Component({
   selector: 'app-loans-main-view',
   templateUrl: './loans-main-view.component.html',
