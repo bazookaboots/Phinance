@@ -1,1 +1,4 @@
 # Phinance
+
+## Initial Idea Summary
+For my project I plan on making a web app that has an at-a-glance dashboard showing the user their net worth, cash inflow, and cash out flow as well as other relevant cards. This web app will also let the user track various other types of financial changes. The first main screen is the dashboard view, it shows the user at-a-glance numbers for their net worth, monthly gain, monthly loss, total loans, total credit, total cash, total assets, total investments. Each at-a-glance card will have an associated page that shows all of the aggregated accounts, items, or trends that contribute to those totals and several breakdown charts that allow the user to dive deeper into the trends and status of that aggregate. Each aggregate page will also have an add button that will allow the user to add more accounts or sources that contribute to the aggregate total. This is a summary of the core components of the app
